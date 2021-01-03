@@ -1,0 +1,19 @@
+---
+layout: post
+title: "SageMaker를 이용한 회귀"
+date: 2020-12-24
+excerpt: "SageMaker 선형 학습기를 통한 회귀 구현"
+tags: [ML, CLOUD]
+comments: False
+use_math: true
+---
+
+## 단계
+* S3에서 훈련용 및 테스트용 데이터 준비
+* API를 호출하여 모델 훈련
+* 모델을 사용하여 예측 얻기
+
+
+~~~
+
+~~~

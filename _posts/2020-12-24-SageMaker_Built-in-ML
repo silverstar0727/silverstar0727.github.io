@@ -1,0 +1,10 @@
+---
+layout: post
+title: "SageMaker를 이용한 Built-in 서비스 이용"
+date: 2020-12-24
+excerpt: "SageMaker의 BlazingText(built-in) 이용하기"
+tags: [ML, CLOUD]
+comments: False
+use_math: true
+---
+
