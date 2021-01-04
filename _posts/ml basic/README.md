@@ -5,6 +5,9 @@
 * [선형회귀 모델(2)](https://silverstar0727.github.io/ml%20basic/2021/01/04/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8(2)/)
 * [로지스틱 회귀](https://silverstar0727.github.io/ml%20basic/2021/01/05/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/#)
   * [Cross Entorpy](https://silverstar0727.github.io/ml%20basic/2021/01/04/cross_entropy/)
+* 인공신경망
+  * Activation function
+  * optimizer
 
 ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보아야 합니다. 
 
