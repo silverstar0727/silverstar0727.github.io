@@ -6,4 +6,6 @@
 * [Cross Entorpy](https://silverstar0727.github.io/ml%20basic/2021/01/04/cross_entropy/)
 
 
-ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보아야 한다.
+ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보아야 합니다. 
+
+딥러닝으로 확장하기 위한 필수적인 개념만을 다루기 때문에 하나의 내용을 모른채로 건너뛸 경우 이후 이해에 어려움이 있습니다.
