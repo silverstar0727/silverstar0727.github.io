@@ -71,8 +71,8 @@ $$= -E_{x \sim P}[log{Q(x) \over P(x)}]$$
 * 이산변수에 대한 Cross Entropy: $H{P, Q} = E_{x \sim P}[-log{Q(x)}]$ $= -\sum_{x}P(x)log{Q(x)}$
 * 이산변수에 대한 KLD: $D_{KL}(P \parallel Q) = -\sum_{x}P(x)log({P(x) \over Q(x)})$ $= \sum_{x} P(x)log{Q(x)} - \sum_{x}P(x)log{P(x)}$ = $H(P,Q) - H(P)$
 
-따라서 $H(P,Q) = H(P) + D_{KL}{P \parallel Q}$ 이다. 그런데 여기서 P는 정해진 데이터에 대한 분포이므로 고정적이고, 확률이 1일때 정보량 즉, 엔트로피는 0이므로
-$H(P, Q) = D_{KL}{P \parallel Q}$ 이다. 결국 $D_{KL}$을 최소화 하는 것은 $H(P, Q)$를 최소화하는 것과 동치이기에, 동일하게 간주한다.
+따라서 $H(P,Q) = H(P) + D_{KL}({P \parallel Q})$ 이다. 그런데 여기서 P는 정해진 데이터에 대한 분포이므로 고정적이고, 확률이 1일때 정보량 즉, 엔트로피는 0이므로
+$H(P, Q) = D_{KL}({P \parallel Q})$ 이다. 결국 $D_{KL}$을 최소화 하는 것은 $H(P, Q)$를 최소화하는 것과 동치이기에, 우리는 흔히 cross entropy를 최소화 한다고 말한다.
 
 
 ## Reference
