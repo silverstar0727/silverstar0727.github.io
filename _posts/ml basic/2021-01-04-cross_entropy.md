@@ -58,7 +58,7 @@ $$= -log_{2}{1/2} = 1$$
 KLD는 두 데이터 분포의 차이를 계산하는 딥러닝 모델에서 유용한다.
 가령, 갖고있는 두 데이터 분포 P(x)와 모델이 예측한 분포 Q(x)를 비교해보자. 
 
-$$D_{KL}(P \parallel Q) = E_{x \sim P}(log{P(x) \over Q(x)})$$
+$$D_{KL}(P \parallel Q) = E_{x \sim P}[log{P(x) \over Q(x)})]$$
 
 $$= -E_{x \sim P}(log{Q(x) \over P(x)})$$
 
