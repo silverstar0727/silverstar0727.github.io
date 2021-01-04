@@ -7,7 +7,7 @@
   * [Cross Entorpy](https://silverstar0727.github.io/ml%20basic/2021/01/04/cross_entropy/)
 * 인공신경망
   * Activation function
-  * optimizer
+  * Optimizer
 
 ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보아야 합니다. 
 
