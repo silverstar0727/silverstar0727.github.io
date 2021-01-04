@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cross Entropy"
-date: 2021-01-04
+date: 2021-01-05
 excerpt: "cost function으로 자주 쓰이는 cross entropy에 대하여"
 tags: [ML Basic]
 category: ML Basic
