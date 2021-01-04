@@ -60,7 +60,7 @@ KLD는 두 데이터 분포의 차이를 계산하는 딥러닝 모델에서 유
 
 $$D_{KL}(P \parallel Q) = E_{x \sim P}(log{P(x) \over Q(x)})$$
 
-$$= -E_{x \sim P}(Q(x) \over P(x))$$
+$$= -E_{x \sim P}(log{Q(x) \over P(x)})$$
 
 이는 머신러닝에서 완성한 모델을 평가할 때 아주 유용한 지표일 것이다.
 
