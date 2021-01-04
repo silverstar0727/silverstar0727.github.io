@@ -37,7 +37,9 @@ Cross Entropy에서 Entropy는 열역학의 엔트로피 공식과 상당히 유
 Shannon Entropy는 모든 사건에 대한 정보량($I(x)$)의 기댓값이며, 이는 전체 사건 확률분포의 불확실성에 대한 양을 나타낸다.
 따라서, 어떠한 확률분포 P에 대한 섀넌 엔트로피 $H(P)$는 다음과 같이 정의된다.
 
-$$H(P) = H(x) = E_{x \sim P}(I(x)) = E_{x \sim P}(-log(P(x)))$$
+$$H(P) = H(x) = E_{x \sim P}(I(x))$$
+
+$$= E_{x \sim P}(-log(P(x)))$$
 
 > 위 식은 x가 분포 p를 따를 때 그 $I$값들의 평균을 나타냈다고 보면 된다.
 
@@ -66,7 +68,12 @@ $$= -E_{x \sim P}[log{Q(x) \over P(x)}]$$
 
 ## Cross Entropy
 위의 KLD를 토대로 이산변수에 대한 Cross Entropy와 KLD를 살펴보자.
-* 이산변수에 대한 Cross Entropy: 
+* 이산변수에 대한 Cross Entropy: $H{P, Q} = E_{x \sim P}[-log{Q(x)}]$ $= -\sum_{x}P(x)log{Q(x)}$
+* 이산변수에 대한 KLD: $D_{KL}(P \parallel Q) = -\sum_{x}P(x)log({P(x) \over Q(x)})$ $= \sum_{x} P(x)log{Q(x)} - \sum_{x}P(x)log{P(x)}$ = $H(P,Q) - H(P)$
+
+따라서 $H(P,Q) = H(P) + D_{KL}{P \parallel Q}$ 이다. 그런데 여기서 P는 정해진 데이터에 대한 분포이므로 고정적이고, 확률이 1일때 정보량 즉, 엔트로피는 0이므로
+$H(P, Q) = D_{KL}{P \parallel Q}$ 이다. 결국 $D_{KL}$을 최소화 하는 것은 $H(P, Q)$를 최소화하는 것과 동치이기에, 동일하게 간주한다.
+
 
 ## Reference
 [Blog](https://curt-park.github.io/2018-09-19/loss-cross-entropy/)
