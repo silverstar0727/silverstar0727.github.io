@@ -54,3 +54,20 @@ $$= -log_{2}{1/2} = 1$$
 위 예시로부터 우리는 하나의 결과를 이끌어낼 수 있는데 균등하지 않은 동전을 던질 때, 즉 $P(x) \neq 0.5$라면 불확실한 정도가 떨어진다. 이것은 엔트로피와 정보량 역시 떨어진다고 볼 수 있다.
 따라서, 사건의 확률이 균등할 때 정보량은 최대가 된다.
 
+## Kullback-Libller Divergence
+KLD는 두 데이터 분포의 차이를 계산하는 딥러닝 모델에서 유용한다.
+가령, 갖고있는 두 데이터 분포 P(x)와 모델이 예측한 분포 Q(x)를 비교해보자. 
+
+$$D_{KL}(P \parallel Q) = E_{x \sim P}(log{P(x) \over Q(x)})$$
+
+$$= -E_{x \sim P}(Q(x) \over P(x))$$
+
+이는 머신러닝에서 완성한 모델을 평가할 때 아주 유용한 지표일 것이다.
+
+
+## Cross Entropy
+위의 KLD를 토대로 이산변수에 대한 Cross Entropy와 KLD를 살펴보자.
+* 이산변수에 대한 Cross Entropy: 
+
+## Reference
+[Blog](https://curt-park.github.io/2018-09-19/loss-cross-entropy/)
