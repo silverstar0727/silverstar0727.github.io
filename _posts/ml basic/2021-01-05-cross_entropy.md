@@ -74,7 +74,7 @@ $$= -E_{x \sim P}[log{Q(x) \over P(x)}]$$
 따라서 $H(P,Q) = H(P) + D_{KL}({P \parallel Q})$ 이다. 그런데 여기서 P는 정해진 데이터에 대한 분포이므로 고정적이고, 확률이 1일때 정보량 즉, 엔트로피는 0이므로
 $H(P, Q) = D_{KL}({P \parallel Q})$ 이다. 결국 $D_{KL}$을 최소화 하는 것은 $H(P, Q)$를 최소화하는 것과 동치이기에, 우리는 흔히 cross entropy를 최소화 한다고 말한다.
 
-> 사실 정보이론의 관점이외에도 통계학적 관점이 존재하는데, 내가 생각하기에 통계적 관점은 이미 알려진 식으로부터 역추적해나가는 과정이라, 증명으로서는 의미를 찾아볼 수 없다고 판단하여 배제하였다. Bernoulli Destribution으로 전개하니 아래 Reference를 찾아보면 된다.
+> 사실 정보이론의 관점 이외에도 통계학적 관점이 존재하는데, 내가 생각하기에 통계적 관점은 이미 알려진 식으로부터 역추적해나가는 과정이라, 증명으로서는 의미를 찾아볼 수 없다고 판단하여 배제하였다. Bernoulli Destribution으로부터 전개하니 아래 Reference를 찾아보면 된다.
 
 ## Reference
 [Blog](https://curt-park.github.io/2018-09-19/loss-cross-entropy/)
