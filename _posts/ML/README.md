@@ -5,6 +5,7 @@
 * SVM(Support Vector machine)
 * PCA(Principal Component Analysis)
 * Decision Tree
-* Random Forest
-* XGBoost
-* LGBM
+* Ensemble
+  * Random Forest
+  * XGBoost
+  * LGBM
