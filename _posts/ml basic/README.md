@@ -14,5 +14,16 @@ ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보�
 
 딥러닝으로 확장하기 위한 필수적인 개념만을 다루기 때문에 하나의 내용을 모른채로 건너뛸 경우 이후 이해에 어려움이 있습니다.
 
-## 모델 간략 정리
-![image](https://user-images.githubusercontent.com/49096513/103568494-f85b5580-4f08-11eb-9c27-8866cb20d8aa.png)
+## 전반적인 정리
+* 목표: 주어진 input data와 output data와의 관계를 설명하는 "함수(모델)"를 설정하고, 이 함수로 새로운 input에 대한 prediction을 수행하는 것
+* 과정
+ * 함수(모델)를 가정
+ * input data를 함수(모델)에 넣고 나온 predict 값과 output data와의 차이를 cost function으로 저장
+ * 해당 cost function을 최소화 하는 방향으로 학습을 진행(optimization)
+* 모델 평가: 다양한 metic으로 모델평가를 진행
+
+> 모델로는 linear regression, logistic regression, ANN 등 다양한 모델이 존재. 대부분의 논문들은 이러한 모델을 제시(too many..)
+
+> cost function으로는 regression에서는 MSE, classification에서는 cross entorpy를 주로 사용하나 다양한 종류가 존재하니, 많이 찾아보고 사용하면 됨.
+
+> metric으로는 MSE, f1-score, AUC, Accuracy등 다양한 metric이 존재하므로 데이터에 잘 맞는 평가지표를 사용하면 됨.
