@@ -8,6 +8,7 @@
 * 인공신경망
   * Activation function
   * Optimizer
+  * 모델 평가 metric
 
 ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보아야 합니다. 
 
