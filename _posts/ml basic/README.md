@@ -18,7 +18,7 @@ ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보�
 * 목표: 주어진 input data와 output data와의 관계를 설명하는 "함수(모델)"를 설정하고, 이 함수로 새로운 input에 대한 prediction을 수행하는 것
 * 과정
   * 함수(모델)를 가정
-  * input data를 함수(모델)에 넣고 나온 predict 값과 output data와의 차이를 cost function으로 
+  * input data를 함수(모델)에 넣고 나온 predict 값과 output data와의 차이를 cost function으로 정량화
   * 해당 cost function을 최소화 하는 방향으로 학습을 진행(optimization)
 * 모델 평가: 다양한 metic으로 모델평가를 진행
 
