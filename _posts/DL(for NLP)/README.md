@@ -9,7 +9,7 @@
 * Attention
   * Transformer
   * BERT
-    * ALBERT
+    * [ALBERT](https://silverstar0727.github.io/paper%20review/2020/12/14/ALBERT/)
   * GPT-1
     * GPT-2
     * GPT-3
