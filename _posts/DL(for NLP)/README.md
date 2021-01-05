@@ -14,5 +14,7 @@
   * [GPT-1](https://paul-hyun.github.io/gpt-01/)
     * GPT-2
     * GPT-3
-
+* GAN
+* Auto Encoder
+  * VAE
 #### 선택
