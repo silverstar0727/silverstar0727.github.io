@@ -17,4 +17,5 @@
 * GAN
 * Auto Encoder
   * VAE
+  
 #### 선택
