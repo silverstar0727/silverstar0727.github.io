@@ -44,7 +44,15 @@ use_math: true
 ![image](https://user-images.githubusercontent.com/49096513/103747657-52ae0080-5046-11eb-9118-b4bff860317d.png)
 
 ## SGD
+SGD는 Stochastic Gradient Descent Optimizer로 미니배치로 나누어 epoch마다 학습을 진행하는 것을 말한다. 해당 방법의 장점은, weight 값을 여러차례 수정하면서 학습할 수 있다는 점과, 그래픽 카드의 메모리가 작아도 효과적으로 학습을 진행할 수 있다는 점이다. weight는 GD와 같은 $W_{t+1} = W_{t}+\alpha {\partial cost \over \partial W}$ 이다.
 
+## Momemtum
+Momemtum은 물리학의 관성과 같은 개념을 도입한 방법으로 직전 배치학습 결과를 모멘텀 상수($\beta$)를 곱한만큼 반영하게 된다. 따라서 식은 다음과 같다. $W_{t + 1} = W_{t} \beta - \alpha {\partial cost \over \partial W}$ 
 
-## Reference
+## RMSProp
+기울기를 누적시키는 AdaGrad에서 최신 기울기일수록 더욱 많이 반영하는 방식을 차용하였다. hyperparameter p를 통해서 작을 수록 더 크게 반영하는 방식으로 적용하였다. 이러한 방식은 local minimum과 최적해 근처에서 느린 학습속도를 개선하였다. 
+
+## Adam
+가장 많이 사용하는 optimizer로 RMSProp과 Momentum를 혼합한 방식으로 가중치의 초기화 시 0으로 편향되는 문제를 해결하였다.
+
 [blog](https://ganghee-lee.tistory.com/24)
