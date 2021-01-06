@@ -24,3 +24,26 @@ Artificial Neural Network는 각 노드들의 무수히 많은 연결로 이루�
 정말 마지막으로 설명하자면(솔직히 직관적으로 이해하는게 편하다) activation function은 말 그대로 현재 노드의 활성(영향력)의 정도를 수치화하는 함수이다.
 
 ## Sigmoid
+앞서 본 sigmoid함수의 구체적인 내용은 [로지스틱 회귀 포스트](https://silverstar0727.github.io/ml%20basic/2021/01/05/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/)를 참고할 것.
+
+* 장점
+  * 미분했을 때, 자기 자신의 함수의 결합으로 도출된다.(backpropagation algorithm에서 미분에 용이)
+
+* 단점
+  * gradient vanishing 문제가 발생한다.
+  > gradient vanishing: 오차 역전파 과정에서는 chain rule에 의한 편미분들의 '곱'으로 표현되는데, 이때 0에 가까운 값을 곱하게 된다면 gradient가 소실되는 문제가 발생한다.
+
+## ReLU
+ReLU 활성화 함수는 gradient vanishing 문제를 해결하기 위한 함수로 $y = max(0, x)$로 정의된다.
+
+* 장점
+  * gradient vanishing 문제 해결
+  * 선형함수를 적용하여 계산량 감소(sigmoid 에서는 exponential 함수를 사용하여 많은 계산량 존재)
+  
+* 단점
+  * dying relu가 발생(음수의 input에 대해서 0을 반환하기 때문에, 높은 확률로 특정 노드가 죽어버린다는 것)
+  
+## Leacky ReLU
+ReLU의 dying relu를 보완한 것으로 간단히 음수의 경우 작은 음의 값은 반환하도록 식을 다음과 같이 조정하였다. $y = max(0.01x, x)$
+* 장점
+  * dying relu해결
