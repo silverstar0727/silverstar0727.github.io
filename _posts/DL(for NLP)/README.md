@@ -8,10 +8,10 @@
   * Bi-LSTM
   * GRU
 * Attention
-  * [Transformer](https://paul-hyun.github.io/transformer-01/)
-  * [BERT](https://paul-hyun.github.io/bert-01/)
-    * [ALBERT](https://silverstar0727.github.io/paper%20review/2020/12/14/ALBERT/)
-  * [GPT-1](https://paul-hyun.github.io/gpt-01/)
+  * Transformer[(구현)](https://paul-hyun.github.io/transformer-01/)
+  * BERT[(구현)](https://paul-hyun.github.io/bert-01/)
+    * [ALBERT](https://silverstar0727.github.io/paper%20review/2020/12/14/ALBERT/)(구현)
+  * GPT-2[(구현)](https://paul-hyun.github.io/gpt-01/)
     * GPT-2
     * GPT-3
 * GAN
