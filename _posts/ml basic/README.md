@@ -8,7 +8,7 @@
 * 소프트맥스 회귀
 * 인공신경망
   * [Activation function](https://silverstar0727.github.io/ml%20basic/2021/01/06/Activation_Function/)
-  * Optimizer
+  * [Optimizer](https://silverstar0727.github.io/ml%20basic/2021/01/06/optimizer/)
   * 모델 평가 metric
   * over fitting & dropout, normalization
 
