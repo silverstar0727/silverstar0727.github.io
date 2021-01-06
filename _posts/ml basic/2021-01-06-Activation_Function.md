@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Activation Function(미완)"
+title: "Activation Function"
 date: 2021-01-06
 excerpt: "ANN에서 제시되는 다양한 Activation Function의 장점과 단점"
 tags: [ML Basic]
