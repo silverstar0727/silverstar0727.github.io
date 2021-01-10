@@ -69,3 +69,4 @@ comments: false
 #### ML Framework: Tensorflow2.0, Pytorch
 #### Cloud: AWS SageMaker, GCP AI Platform
 #### Tools: Docker, Kubernetes, Kubeflow
+#### App: Flutter
