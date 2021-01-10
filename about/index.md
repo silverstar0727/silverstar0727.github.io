@@ -65,4 +65,7 @@ comments: false
 * 주식회사 KOSKOM((구)증권거래소 증권전산실)에서 실시한 AI 금융분석 전문가 과정을 수료하였습니다.
 
 ## 💻Tech Stack
-#### Python, Tensorflow2.0, pytorch, Flutter, Dart, AWS SageMaker
+#### Languages: Python, Dart, JS, C, LaTeX
+#### ML Framework: Tensorflow2.0, Pytorch
+#### Cloud: AWS SageMaker, GCP AI Platform
+#### Tools: Docker, Kubernetes, Kubeflow
