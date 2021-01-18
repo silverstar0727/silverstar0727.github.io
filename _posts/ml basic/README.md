@@ -5,7 +5,7 @@
 * [선형회귀 모델(2)](https://silverstar0727.github.io/ml%20basic/2021/01/04/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80%EB%AA%A8%EB%8D%B8(2)/)
 * [로지스틱 회귀](https://silverstar0727.github.io/ml%20basic/2021/01/05/%EB%A1%9C%EC%A7%80%EC%8A%A4%ED%8B%B1%ED%9A%8C%EA%B7%80/#)
   * [Cross Entorpy](https://silverstar0727.github.io/ml%20basic/2021/01/04/cross_entropy/)
-* 소프트맥스 회귀
+* [소프트맥스 회귀](https://silverstar0727.github.io/ml%20basic/2021/01/18/softmax/#)
 * 인공신경망(Artifical Neural Network)
   * [Activation function](https://silverstar0727.github.io/ml%20basic/2021/01/06/Activation_Function/)
   * [Optimizer](https://silverstar0727.github.io/ml%20basic/2021/01/06/optimizer/)
