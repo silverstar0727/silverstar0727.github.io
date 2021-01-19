@@ -28,6 +28,6 @@ ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보�
 
 > cost function으로는 regression에서는 MSE, classification에서는 cross entorpy를 주로 사용하나 다양한 종류가 존재하니, 많이 찾아보고 사용하면 됨.
 
-> optimization에서는 optimizer로 GD, SGD, Adam(이들은 주로 ANN에서 사용 됨)등 다양하게 존재함. 선형회귀에서는 Least Mean Squared algorithm을, 로지스틱회귀에서는 conjugated gradient algorithm 등을 사용. 적절히 잘 알아보고 사용하면 됨.
+> optimization에서는 optimizer로 GD, SGD, Adam(이들은 주로 ANN에서 사용 됨)등 다양하게 존재함. 적절히 잘 알아보고 사용하면 됨.
 
 > metric으로는 MSE, f1-score, AUC, Accuracy등 다양한 metric이 존재하므로 데이터에 잘 맞는 평가지표를 사용하면 됨.
