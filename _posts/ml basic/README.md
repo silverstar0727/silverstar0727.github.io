@@ -10,7 +10,7 @@
   * [Activation function](https://silverstar0727.github.io/ml%20basic/2021/01/06/Activation_Function/)
   * [Optimizer](https://silverstar0727.github.io/ml%20basic/2021/01/06/optimizer/)
   * [모델 평가 metric](https://silverstar0727.github.io/ml%20basic/2021/01/17/metrics/)
-  * over fitting & dropout, normalization
+  * overfitting & dropout, normalization and regularization(L1, L2)
 
 ML Basic post는 수식이 많아서 LaTex로 번역된 블로그에 가서 보아야 합니다. 
 
