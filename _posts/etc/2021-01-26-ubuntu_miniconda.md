@@ -26,6 +26,12 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ~~~
 
+여기서 글이 빼곡히 나오는데, 엔터를 계속 누르다가 yes -> enter -> yes 순으로 입력하라고 할때마다 해주면 된다.
+
+Thank you for installing Miniconda3
+
+해당 글이 나오면 성공!
+
 * miniconda VM
 
 ~~~
