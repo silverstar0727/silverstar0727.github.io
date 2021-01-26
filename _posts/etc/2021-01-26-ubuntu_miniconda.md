@@ -15,16 +15,19 @@ GCP e2-medium instance(Ubuntu 18.04)
 우선 명령 터미널을 연 상태에서 miniconda를 설치해 준다.
 
 * download miniconda
+
 ~~~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ~~~
 
 * install miniconda
+
 ~~~
 bash Miniconda3-latest-Linux-x86_64.sh
 ~~~
 
 * miniconda VM
+
 ~~~
 source ~/.bashrc
 ~~~
@@ -44,11 +47,13 @@ conda create -y -test
 ~~~
 
 * VM
+
 ~~~
 activate test
 ~~~
 
 * install pytorch, tensorflow
+
 ~~~
 conda install pytorch
 conda install tensorflow
@@ -60,6 +65,7 @@ conda install tensorflow
 여기서는 dcgan을 pytorch로 구현한 파일을 생성하였다.
 
 * 파일 생성
+
 이름을 dcgan으로 했지만 원하는 이름으로 설정하면 된다.
 ~~~
 vim dcgan.py
@@ -160,6 +166,7 @@ print(discriminator)
 ~~~
 
 * 실행
+
 python3 명령을 통해 본인이 생성한 파일을 실행시키면 된다.
 ~~~
 python3 dcgan.py
