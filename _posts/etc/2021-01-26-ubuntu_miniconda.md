@@ -179,3 +179,7 @@ python3 dcgan.py
 ~~~
 
 최종적으로 모델이 출력되면 성공!!
+
+## Reference
+* [Conda 가상 환경으로 PyTorch 설치하기](https://dreamgonfly.github.io/blog/conda-pytorch/)
+* [우분투 미니콘다 설치](https://wookkk.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-%EB%AF%B8%EB%8B%88%EC%BD%98%EB%8B%A4-%EC%84%A4%EC%B9%98)
