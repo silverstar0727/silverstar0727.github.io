@@ -49,13 +49,13 @@ conda install python=3.7
 
 여기서 test는 가상환경의 이름을 가리키므로 본인이 원하는 것으로 설정하면 된다.
 ~~~
-conda create -y -test
+conda create -y -n test
 ~~~
 
 * VM
 
 ~~~
-activate test
+conda activate test
 ~~~
 
 * install pytorch, tensorflow
