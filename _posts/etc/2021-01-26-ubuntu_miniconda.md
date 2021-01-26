@@ -65,6 +65,8 @@ conda install tensorflow
 vim dcgan.py
 ~~~
 
+insert키를 눌러 아래 코드를 복사하여 붙여넣고 :wq를 입력하여 수정하고 종료한다.
+
 ~~~
 """ configuration json을 읽어들이는 class """
 class Config(dict): 
