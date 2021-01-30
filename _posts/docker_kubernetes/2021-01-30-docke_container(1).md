@@ -9,6 +9,9 @@ comments: False
 use_math: true
 ---
 
+## Environments
+GCP e2-medium instance(Ubuntu 18.04)
+
 ## 도커 설치
 ~~~
 sudo apt-get update
