@@ -67,3 +67,59 @@ wordpress
 ~~~
 
 #### 컨테이너와의 볼륨 공유
+다른 컨테이너와 볼륨을 공유하기 위해서는 컨테이너 생성 시, --volumes-from 옵션을 설정하여 -v 옵션을 설정한 다른 컨테이너와 공유할 수 있다.
+
+볼륨 구조를 host와 연결된 컨테이너(volume_overide), 그리고 이 컨테이너와 연결된 새로운 컨테이너(volumes_from_container)를 만들어 보자.
+
+우선 아래 코드를 통해 alicek106/volume_test라는 미리 준비된 이미지로 컨테이너를 만들고 이것을 호스트의 /home/wordpress_db와 연결한다.
+~~~
+# volume_overide
+sudo docker run -i -t \
+--name volume_overide \
+-v /home/wordpress_db:/home/testdir_2 \
+alicek106/volume_test
+~~~
+
+이후 위에서 생성한 컨테이너를 --volumes-from의 옵션을 통해 위의 container와 연결한다.
+~~~
+# volumes_from_container
+sudo docker run -i -t \
+--name volumes_from_container \
+--volumes-from volume_overide\
+ubuntu:14.04
+~~~
+
+#### 도커 볼륨 활용
+마지막은 도커에서 제공하는 docker volume 명령어를 사용하는 방법이다. 
+
+create 명령어를 통해 볼륨을 생성한다.
+~~~
+sudo docker volume create --name myvolume
+~~~
+
+ls로 볼륨을 확인할 수 있다.
+~~~
+sudo docker volume ls
+~~~
+
+이제 컨테이너를 생성하고 여기에 연결하기 위해서는 다시 v옵션을 통해 연결하면 된다.
+~~~
+sudo docker run -i -t --name myvolume_1 \
+-v myvolume:/root/ \
+ubuntu:14.04
+~~~
+
+inspect 명령어는 myvolume의 볼륨이 실제로 어디에 저장되는 지 확인할 수 있다.
+~~~
+sudo docker inspect --type volume myvolume
+~~~
+
+~~~
+sudo docker container inspect myvolume_1
+~~~
+
+삭제 시에는 prune 명령어를 사용한다.
+~~~
+docker volume prune
+~~~
+
