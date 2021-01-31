@@ -28,7 +28,7 @@ ALBERT는 BERT모델의 사이즈와 특정 task에 대해서 개선을 하였�
 그렇기에 형태소간의 관계를 더욱 잘 표현할 수 있는 임베딩의 기법이 요구되었다.
 
 ## Contibution
-KoreALBERT에서는 위에서 언급한 ALBERT의 한국어 적용 부적합을 새롭게 제시한 WOP(Word Order Predction)으로 해결하였다.
+KoreALBERT에서는 위에서 언급한 ALBERT의 한국어 적용 부적합을 새롭게 개선한 WOP(Word Order Predction)으로 해결하였다.
 
 WOP는 형태소 단위로 tokenizing하여 그들의 앞뒤를 바꾸거나 바꾸지 않고, 바뀐 token에 대한 예측을 하는 것이 핵심 task이다.
 따라서, 먼저 언급한 ALBERT의 MLM과 SOP를 고스란히 적용하고 여기세 WOP를 추가로 적용하여 총 3 가지의 task를 이용한 모델을 완성하였다.
