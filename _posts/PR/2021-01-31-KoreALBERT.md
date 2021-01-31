@@ -15,7 +15,7 @@ comments: False
 
 ## Challenge
 ALBERT는 BERT모델의 사이즈와 특정 task에 대해서 개선을 하였다. 
-사이즈 즉, parameter의 개수를 줄이기 위해서 Cross-layer Parameter Sharing의 방식을 사용하였고, NSP SOP로 전환을 하였다.
+사이즈 즉, parameter의 개수를 줄이기 위해서 Cross-layer Parameter Sharing의 방식을 사용하였고, NSP를 SOP로 전환을 하였다.
 
 여기서 NSP는 BERT의 Next Sentence Prediction으로 다음 문장이 알맞게 오는 것인지를 확인하는 태스크이다.
 한편, SOP는 Sentence order prediction으로 문장의 순서가 맞는지를 기준으로 학습을 진행하는 태스크이다.
