@@ -8,7 +8,7 @@ tags: [PR]
 comments: False
 ---
 
-삼성 SDS에서 ICPR 2020에 억셉된 KoreALBERT의 모델에 관한 논문리뷰 포스트입니다.
+삼성 SDS에서 ICPR 2020에 억셉된 KoreALBERT의 모델에 관한 논문리뷰 포스트이다.
 
 본 논문은 A Lite BERT(ALBERT)의 기초하에 작성되었다. 
 이에 대한 논문은 기존에 리뷰를 한 적이 있으니, 다음의 [링크](https://silverstar0727.github.io/paper%20review/2020/12/14/ALBERT/#)에서 보고 해당 포스트를 보는 것이 이해가 빠를 것이라고 생각된다.
@@ -60,7 +60,7 @@ WOP는 형태소 단위로 tokenizing하여 그들의 앞뒤를 바꾸거나 바
 * 나무위키의 740,094개의 document를 크롤링 하였다.
 
 ## Result
-결과는 대부분의 task에서 괄목할만 했다. NLI에서 SOP를 제거하는 것이 더 효과적이라는 사실을 놀랍다...
+결과는 대부분의 task에서 괄목할만 했다. NLI에서 SOP를 제거하는 것이 더 효과적이라는 사실이 놀랍다...
 
 ![image](https://user-images.githubusercontent.com/49096513/106372859-5c155900-63b7-11eb-97b6-53b7b523adc6.png)
 
