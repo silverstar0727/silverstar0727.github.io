@@ -42,7 +42,7 @@ WOP는 형태소 단위로 tokenizing하여 그들의 앞뒤를 바꾸거나 바
 
 > dropout을 빼는 것이 더 효과가 좋다는 논문이 있다고 언급하기도 하였는데, 그런게 있다니... 신기하다.
 
-## Experiments
+## Experiment
 실험은 WOP를 성능을 알아보기 위해 위에서 언급한 WOP를 포함한 3가지 task를 2개씩 번갈아 가면서 진행하기도 하였다.
 
 #### optimization
