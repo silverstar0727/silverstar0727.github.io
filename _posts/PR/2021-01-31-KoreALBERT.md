@@ -2,13 +2,13 @@
 layout: post
 title: "koreALBERT"
 date: 2021-01-31
-excerpt: "삼성 SDS의 ICLR 2020에 억셉된 koreALBERT의 논문 리뷰"
+excerpt: "삼성 SDS의 2020에 억셉된 koreALBERT의 논문 리뷰"
 category: Paper Review
 tags: [PR]
 comments: False
 ---
 
-삼성 SDS에서 ICLR 2020에 억셉된 KoreALBERT의 모델에 관한 논문리뷰 포스트입니다.
+삼성 SDS에서 ICPR 2020에 억셉된 KoreALBERT의 모델에 관한 논문리뷰 포스트입니다.
 
 본 논문은 A Lite BERT(ALBERT)의 기초하에 작성되었다. 
 이에 대한 논문은 기존에 리뷰를 한 적이 있으니, 다음의 [링크](https://silverstar0727.github.io/paper%20review/2020/12/14/ALBERT/#)에서 보고 해당 포스트를 보는 것이 이해가 빠를 것이라고 생각된다.
