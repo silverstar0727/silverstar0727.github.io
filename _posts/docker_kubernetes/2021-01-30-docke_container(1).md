@@ -154,5 +154,7 @@ apt-get install apache2 -y
 service apache2 start
 ~~~
 
+gcp의 vpc에서 외부ip 항목에서 현재 인스턴스의 ip를 고정으로 지정해주고, 인터넷 창에 [외부ip]:[80] 으로 연결하면 연결이 된다.
+
 ## Referenece
 * [시작하세요 도커 쿠버네티스](http://www.yes24.com/Product/Goods/93765519)
