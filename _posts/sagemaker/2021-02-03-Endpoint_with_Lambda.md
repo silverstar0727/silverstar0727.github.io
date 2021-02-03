@@ -125,4 +125,4 @@ chalice deploy
 이때 url에 텍스트를 넣는 것을 변환하기 위해서 slugify를 사용하였고 그렇기에 라이브러리 설정에서 python-slugify 코드를 집어넣은 것이다.
 
 ## Reference
-* [비즈니스 머신러닝](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791195511747&orderClick=JAj)
+* [비즈니스 머신러닝](http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.prdNo=345204895&gclid=CjwKCAiAjeSABhAPEiwAqfxURdytZfBnYoHVzS4wchEYXkgGOdL2O-AV3NJMbGqbCg965_va53Mc0xoC-r0QAvD_BwE)
