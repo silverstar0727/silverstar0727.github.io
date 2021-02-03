@@ -123,3 +123,6 @@ estimator.fit()
 # deploy the trained model
 predictor = estimator.deploy(1, instance_type)
 ~~~
+
+## Reference
+* [aws document](https://docs.aws.amazon.com/ko_kr/sagemaker/latest/dg/adapt-training-container.html)
