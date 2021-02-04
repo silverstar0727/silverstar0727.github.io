@@ -1,0 +1,24 @@
+# Activation Fucntion
+
+앞서 DSC Yonsei 임성수 님께서 작성해 주신 Logistic Regression post에서 input과 가중치의 선형결합을 sigmoid 함수에 넣어서 output으로 이진분류를 하는 것으 배웠습니다.
+
+또한 저의 지난 post인 ANN(Artificial Neural Network)에서는 MLP에서 각 노드들이 선형결합을 하고 activation function을 통해 노드의 input을 일종의 신호로 반환한다는 것을 배웠습니다.
+
+따라서 이러한 post를 선험적으로 보는 것이 이번 포스트를 이해하는데 많은 도움이 될 수 있을 것이라고 생각합니다.
+
+* [Logistic Regression](https://dscyonsei.tistory.com/4)
+* [Artificial Neural Network](https://dscyonsei.tistory.com/3)
+
+## 개요
+우선 Activation Function과 같은 경우에는 MLP에서 input을 일종의 신호로 변환할 때 중요하게 작용합니다.
+핵심적인 것으로는 숫자가 너무 크지 않아야 하고, 오차의 역전파 시 미분이 용이해야한다는 점이 중요합니다.
+
+그 종류로는 다음고 같은 것들이 있고 이것들을 하나하나 따져가며 살펴봅시다.
+
+1. Sigmoid function
+2. tanh function
+3. ReLU function
+4. Leacky ReLU function
+5. GeLU function
+
+## Sigmoid function
