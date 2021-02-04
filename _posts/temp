@@ -16,9 +16,17 @@
 그 종류로는 다음고 같은 것들이 있고 이것들을 하나하나 따져가며 살펴봅시다.
 
 1. Sigmoid function
-2. tanh function
-3. ReLU function
-4. Leacky ReLU function
-5. GeLU function
+2. ReLU function
+3. Leacky ReLU function
+4. GeLU function
 
 ## Sigmoid function
+우선 대표적으로는 앞서 언급한 logistic regression에서 사용되는 Sigmoid function 입니다. 
+시그모이드 함수는 그 그래프를 그렸을 때, 아래와 같이 0과 1사이의 값을 갖고 있고 $\phi(z) = {1 \over e^z}$의 식으로 표현됩니다.
+
+그런데 이러한 sigmoid function의 식을 보면 하나 특이한 점이 있습니다. exponential function을 합성한 형태로 미분할 경우 너무 간단하 꼴이 도출된다는 것입니다.
+
+따라서, MLP의 특성상 backpropagation을 써야하고, 그렇기 때문에 미분이 너무 복잡하면 안되고 이러한 관점에서 볼 때 활성화 함수로 용이하다는 것입니다.
+
+한 가지 단점은 layer가 더 깊이 쌓이는 모델에 backpropagation의 과정에 gradient가 0으로 수렴하는 gradient vanishing 문제가 발생한다는 것입니다.
+이러한 단점은 너무나도 치명적이라서 최근 모델의 복잡도가 높아지는 추세에서는 잘 쓰이지 않는 편입니다.
