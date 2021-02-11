@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Docker image(1)()"
+title: "Docker image(1)"
 date: 2021-02-11
 excerpt: "도커 이미지를 생성하고 삭제, 추출하는 것을 간단하게 다룬다."
 tags: [Docker]
