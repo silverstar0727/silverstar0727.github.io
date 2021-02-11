@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "koreALBERT"
+title: "[PR]KoreALBERT"
 date: 2021-01-31
 excerpt: "삼성 SDS의 2020에 억셉된 koreALBERT의 논문 리뷰"
 category: Paper Review
