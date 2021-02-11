@@ -1,3 +1,14 @@
+---
+layout: post
+title: "Docker image(1)()"
+date: 2021-02-11
+excerpt: "도커 이미지를 생성하고 삭제, 추출하는 것을 간단하게 다룬다."
+tags: [Docker]
+category: Docker & Kubernetes
+comments: False
+use_math: true
+---
+
 ## Docker search
 도커는 기본적으로 도커 허브(Docker Hub)라는 중앙 이미지 저장소에서 이미지를 내려받는다. 따라서 각 도커 엔진은 앞에서 “docker pull”, “docker push” 등의 명령어를 통해 도커 허브와 상호작용한다.
 
