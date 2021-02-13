@@ -22,6 +22,7 @@ use_math: true
 4. auto_crawling을 실행시켜 IS, BS, CF파일이 성공적으로 만들어진 것을 확인한 뒤, auto_modeling파일을 실행시켜 준다.
 
 # Result
-![image](https://user-images.githubusercontent.com/49096513/107846907-dc61a280-6e2a-11eb-9d1e-d79d5a637ae9.png)
+![image](https://user-images.githubusercontent.com/49096513/107860680-f5e30880-6e83-11eb-8358-984032fd4eb8.png)
+
 
 위 그림과 같이 modling의 csv파일이 생성된 것을 확인할 수 있다.
