@@ -65,6 +65,3 @@ sudo docker build -t mybuild:0.0 ./
 ~~~
 sudo docker run -d -P —name myserver mybuild:0.0
 ~~~
-
-## Reference
-* [Docker, Docker-compose 설치하기](https://velog.io/@dudu/Docker-Docker-compose-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-Ubuntu-18.04)
