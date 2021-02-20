@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dockerfile"
+title: "Dockerfile(2)"
 date: 2021-02-12
 excerpt: "Dockerfile을 다루는 것을 배운다."
 tags: [Docker]
