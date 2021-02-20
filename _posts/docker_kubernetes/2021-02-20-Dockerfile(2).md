@@ -130,3 +130,6 @@ docker build -t entrypoint_image:0.0 ./
 ~~~
 
 
+
+## Reference
+* [Docker, Docker-compose 설치하기](https://velog.io/@dudu/Docker-Docker-compose-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0-Ubuntu-18.04)
