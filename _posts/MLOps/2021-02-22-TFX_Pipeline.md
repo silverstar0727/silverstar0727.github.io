@@ -59,8 +59,25 @@ pipeline.Pipeline(
 )
 ~~~
 
-#### 템플릿을 사용한 파이프라인 빌드(이후에 workshop을 따라할 예정)
+#### 템플릿을 사용한 파이프라인 빌드
 
+아래 코드를 실행.
+
+이때 사용된 템플릿은 데이터, 전처리 코드, keras를 이용한 모델, pipeline 구현 및 구성 스크립트를 가져와서 kubeflow 혹은 apache beam 파이프라인용 DAG 실행기 코드와 metadata 저장소에 복사
+~~~
+# 템플릿 보기(근데 지금은 taxi밖에 안됨)
+tfx template list
+
+# 템플릿 선택 후 복사
+tfx template copy —model=taxi —pipline_name=test —destination_path={project_dir}
+~~~
+
+apache beam을 사용할 경우 아래 코드를 이용하여 파이프라인에 추가
+~~~
+python beam_dag_runner.py
+~~~
+
+> 추후에 kubeflow를 위한 pipeline 예제를 시도해 볼 예정
 
 #### 사용자 정의 파이프라인 빌드(일단 skip)
 
