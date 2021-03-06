@@ -126,3 +126,137 @@ statistics_gen = StatisticsGen(examples = example_gen.outputs[‘examples])
 schema_gen = SchemaGen(statistics_gen.outputs[‘statistics’], infer_feature_shape = True)
 example_validator = ExampleValidator(statistics = statistics_gen.outputs[‘statistics’], schema = schema_gen.outputs[‘schema’])
 ~~~
+
+
+# 데이터 전처리
+## 장점
+* 전체 데이터 세트에 대한 전처리: 정규화의 경우 전체 데이터에 대해서 수행해야 효과적임
+* 단계확장: Apache Beam을 이용하여 GCP Dataflow등과 결합 가능
+* Training Serving Skew 방지: Training과 Serving에서 동일한 전처리를 통해 편향을 제거
+
+## TFT
+* Process: Ingested raw data & Raw data schema -> preprocessing_fn() -> Transform graph, Transformed data
+
+#### 다양한 기능
+* 통합적 기능
+- tft.scale_to_z_score(): 표준정규화
+- tft.bucketize(): 데이터를 버킷으로 분할
+- tft.pca(): 주성분 분석
+- tft.compute_and_apply_vocabulary(): 특정 feature에 대한 unique값을 계산하고 가장 많은 값을 인덱스에 매핑 -> 이후 숫자로 변환
+
+* 자연어에서의 기능
+- tft.ngrams(): n-gram
+- tft.bag_of_words(): bag of words
+- tft.tfidf(): tf-idf
+
+* 비전에서의 기능
+~~~
+def process_image(raw_image):
+    raw_image = tf.reshape(raw_image, [-1])
+    img_rgb = tf.io.decode_jpeg(raw_image, channels=3)
+    img_gray = tf.image.rgb_to_grayscale(img_rgb) 
+    img = tf.image.convert_image_dtype(img, tf.float32)
+    resized_img = tf.image.resize_with_pad(
+        img,
+        target_height=300,
+        target_width=300
+    )
+    img_grayscale = tf.image.rgb_to_grayscale(resized_img)
+    return tf.reshape(img_grayscale, [-1, 300, 300, 1])
+~~~
+
+#### Usage
+~~~
+!pip install tensorflow-transform
+
+def preprocessing_fn(inputs):
+	x = inputs[‘x’]
+	x_normalized = tft.scale_to_0_1(x)
+	return {‘x_xf’: x_normalized}
+~~~
+
+#### 별도로 TFT만을 실행
+
+
+
+## TFT on TFX
+~~~
+# 여기서 module.py는 preprocessing_fn()이 포함되어야 있어야 한다.
+# https://github.com/Building-ML-Pipelines/building-machine-learning-pipelines/blob/master/components/module.py
+transform = Transform(examples = example_gen.outputs[‘examples’],  schema = schema_gen.outputs[‘schema’], module_file = <module.py path>)
+
+context.run(transform)
+~~~
+
+# 모델 훈련
+## 별도의 훈련 파이썬 스크립트 ->  run_fn() 정의
+
+1. TFT output
+2. train, eval dataset에 Input 데이터를 넣기(이때, 함수를 이용하여 클린 코딩)
+3. model 정의 (함수를 이용하여 컴파일까지 한 후 model을 반환)
+4. log를 이용하여 Tensorboard 및 callback 정하기
+5. model.fit
+6. signatures 정의(8장 참조)
+7. model.save()
+
+## Usage
+* module.py 내부에 run_fn()을 정의하기
+
+~~~
+from tfx.components import Trainer
+from tfx.components.base import executor_spec
+from tfx.components.trainer.executor import GenericExecutor
+from tfx.proto import trainer_pb2
+
+TRAINING_STEPS = 1000
+EVALUATION_STEPS = 100
+
+trainer = Trainer(
+	module_file = <‘module.py’ path>, 
+	custom_executor_spec = executor_spec.ExecutorClassSpec(GenericExecutor),
+	transformed_examples = transform.outputs[‘transformed_examples’],
+	transform_graph = transform.outputs[’transform_graph’],
+	schema = schema_gen.outputs[‘schema’],
+	train_args = trainer_pb2.TrainArgs(num_steps = TRAINING_STEPS),
+	eval_args = trainer_pb2.EvalArgs(num_steps = EVALUATION_STEPS))
+~~~
+
+## Tensorboard on colab
+~~~
+import datetime
+
+log_dir = ‘logs/my_board/‘ + datetime.datetime.now().strftime(‘%Y%m%d-%H%M%S’)
+
+# tensorboard callback 설정 (log_dir 중요)
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir = log_dir, histogram_freq = 1)
+
+model.fit(
+	<x_train>, 
+	<y_train>, 
+	validation_data = (<x_test>, <y_test>), 
+	epochs = 100, 
+	callbacks = [tensorboard_callback]) 
+~~~
+
+~~~
+%load_ext tensorboard
+%tensorboard —logdir {log_dir}
+~~~
+
+## Distribution training
+* MirroredStrategy
+* CentralStorage
+* MultiWorkerMirrored
+* TPU
+* ParameterServerStrategy
+* OneDeviceStrategy
+
+~~~
+# example
+mirrored_strategy = tf.distribute.MirroredStrategy()
+with mirrored_strategy.scope():
+	model = get_model()
+~~~
+## TFX Tuner, Katib, kears tuner
+
+# 
