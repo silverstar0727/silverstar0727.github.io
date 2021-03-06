@@ -322,4 +322,109 @@ eval_results_from_disk = tfma.load_eval_results([
 tfma.view.render_slicing_metrics(eval_result)
 ~~~
 
+## WIT(What-If Tool)
+1. eval data 준비
+2. tf.saved_model.load로 모델 호출
+3. predict_fn에 model.signatures를 불러오기
+4. predict라는 함수를 설정
+	4.1. predict_fn에 인자로 examples에 eval data를 넣어주기 -> 결과를 preds에 저장
+	4.2. preds[‘outputs’].numpy()로 결과 반환
+5. WIT 구성
+6. 시각화
 
+~~~
+!pip install witwidget
+
+eval_data = tf.data.TFRecordDataset(eval data file dir) # 
+subset = eval_data.take(1000) # eval_data중 1000개를 샘플링
+eval_examples = [tf.train.Example.FromString(d.numpy()) for d in subset] # 1000 개 예제를 만듦
+
+model = tf.saved_model.load(export_dir = <model dir>)
+predict_fn = model.signatures[‘serving_default’]
+
+def predict(test_examples):
+	test_examples = tf.constant([example.SerializeToString() for example in examples])
+	preds = predict_fn(examples = test_examples)
+	return preds[‘outputs’].numpy()
+
+from witwidget.notebook.visualization import WitConfigBuilder
+
+config_builder = WitConfigBuilder(eval_examples).set_custom_predict_fn(predict)
+WitWidget(config_builder)
+~~~
+
+## Evaluator
+
+1. ResolverNode 정하기
+2. eval_config 정하기
+3. Evaluator 실행
+4. TFMA를 이용
+~~~
+from tfx.components import ResolverNode
+from tfx.dsl.experimental import latest_blessed_model_resolver
+from tfx.types import Channel
+from tfx.types.standard_artifacts import Model
+from tfx.types.standard_artifacts import ModelBlessing
+import tensorflow_model_analysis as tfma
+from tfx.components import Evaluator
+
+model_resolver = ResolverNode(
+	instance_name = ‘latest_blessed_model_resolver’,
+	resolver_class = latest_blessed_model_resolver.LatestBlessedModelResolver,
+	model = Channel(type = Model),
+	model_blessing = Channel(type = ModelBlessing)
+)
+
+eval_config = tfma.EvalConfig(
+	model_specs[tfma.ModelSpec(<label_key>)],
+	slicing_specs = [tfma.SlicingSpec(), tfma.SlicingSpec(feature_keys = [‘product’])],
+	metrics_specs = [tfma.MetricsSpec(metrics = [
+			tfma.MetricConfig(class_name = ‘BinaryAccuracy’),
+			tfma.MetricConfig(class_name = ‘ExampleCount’),
+			tfma.MetricConfig(class_name = ‘AUC’),
+		])
+	]
+)
+
+evaluator = Evaluator(
+	examples = example_gen.outputs[‘examples’],
+	model = trainer.outputs[‘model’],
+	baseline_model = model_resolver.output[‘model’],
+	eval_config = eval_config
+)
+
+
+~~~
+
+## TFX에서의 모델검사 자동화
+~~~
+eval_config = tfma.EvalConfig(
+	model_specs[tfma.ModelSpec(<label_key>)],
+	slicing_specs = [tfma.SlicingSpec(), tfma.SlicingSpec(feature_keys = [‘product’])],
+	metrics_specs = [tfma.MetricsSpec(
+		metrics = [
+			tfma.MetricConfig(class_name = ‘BinaryAccuracy’),
+			tfma.MetricConfig(class_name = ‘ExampleCount’),
+			tfma.MetricConfig(class_name = ‘AUC’),
+		],
+		thresholds = {
+			‘AUC’: tfma.config.MetricThreshold(
+				value_threshold = tfma.GenericValueThreshold(lower_bound = {‘value’: 0.65}),
+				change_threshold = tfma.GenericChangeThreshold(direction = tfma.MetricDirection.HIGHER_IS_BETTER, absolute = {‘value’: 0.01})
+			)
+		}
+	)]
+)
+~~~
+
+## Pusher
+~~~
+from tfx.components import Pusher
+from tfx.proto import pusher_pb2
+
+pusher = Pusher(
+	model = trainer.outputs[‘model’],
+	model_blessing = evaluator.outputs[‘blessing’],
+	pusher_destination = pusher_pb2.PushDestination(filesystem = pusher_pb2.PusherDestination.Filesystem(base_directory = <serving model dir>))
+)
+~~~
