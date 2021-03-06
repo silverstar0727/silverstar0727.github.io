@@ -259,4 +259,67 @@ with mirrored_strategy.scope():
 ~~~
 ## TFX Tuner, Katib, kears tuner
 
-# 
+# 모델 평가
+## TFMA
+#### 독립형 패키지로 단일 모델 분석
+~~~
+!pip install tensorflow-model-analysis
+import tensorflow_model_analysis as tfma
+
+# 저장된 모델과 평가 데이터 셋을 입력으로 사용
+eval_shared_model = tfma.default_eval_shared_model(
+	eval_saved_model_path = <model dir>,
+	tags = [tf.saved_model.SERVING])
+
+# metric 정하기
+eval_config = tfma.EvalConfig(
+	model_specs = [tfma.ModelSpec(label_key = <label_key>)],
+	slicing_spec = [tfma.SlicingSpec()],
+	metrics_specs = [
+		tfma.MetricsSpec(metrics = [
+			tfma.MetricConfig(class_name = ‘BinaryAccuracy’),
+			tfma.MetricConfig(class_name = ‘ExampleCount’),
+			tfma.MetricConfig(class_name = ‘FalsePositives’),
+		])
+	]
+)
+
+# 모델 분석 단계
+eval_result = tfma.run_model_analysis(
+	eval_shared_model = eval_shared_model,
+	eval_config= = eval_config,
+	data_location = <eval data file dir>,
+	output_path = <output dir>,
+	file_format = ‘tfrecords’	
+)
+
+# 시각화
+tfma.view.render_slicing_metrics(eval_result)
+~~~
+
+#### 독립형 패키지로 여러 모델 분석
+~~~
+eval_shared_model_2 = tfma.default_eval_shared_model(
+	eval_saved_model_path = <saved model dir>,
+	tags = [tf.saved_model.SERVING]	
+)
+
+eval_result_2 = tfma.run_model_analysis(
+	eval_shared_model = eval_shared_model_2,
+	eval_config = eval_config,
+	data_location = <eval data file dir>,
+	output_path = <output_dir>,
+	file_format = ‘tfrecords’
+)
+
+# 결과 로드
+eval_results_from_disk = tfma.load_eval_results([
+	<output dir1>, <output dir2>],
+	tfma.constants.MODEL_CENTRIC_MODE
+)
+
+# 시각화
+tfma.view.render_slicing_metrics(eval_result)
+~~~
+
+
