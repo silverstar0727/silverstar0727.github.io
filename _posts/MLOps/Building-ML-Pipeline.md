@@ -1,4 +1,4 @@
-# 소개
+# Ch2 소개
 ## components 종류
 * 데이터 수집: ExampleGen
 * 데이터 유효성 검사: StatisticsGen, SchemaGen, ExampleValidator -> TFDV
@@ -43,7 +43,7 @@ Batch Process, Streaming, Data Pipeline을 Apache Spark, Google Cloud Dataflow�
 * 추상화: 컬렉
 
 
-# 데이터 수집
+# Ch3 데이터 수집
 * 목적: 데이터 세트를 하위 집합으로의 분류, 하나의 포괄적인 데이터로 결합, 수집하는 전략
 * 개괄: 데이터 파일, bigquery등 외부에서 읽기 -> tf.Example의 데이터 구조를 가진 TFRecord 파일로 데이터를 변환(장점: 시스템 독립적, 빠른 속도, TFX에서 광범위하게 사용)
 * component: ExampleGen
@@ -111,7 +111,7 @@ example_gen = CsvExampleGen(input = examples, output_config = output)
 
 
 
-# 데이터 검증
+# Ch4 데이터 검증
 ## TFDV
 
 ## GCP로 대규모 전처리
@@ -128,7 +128,7 @@ example_validator = ExampleValidator(statistics = statistics_gen.outputs[‘stat
 ~~~
 
 
-# 데이터 전처리
+# Ch5 데이터 전처리
 ## 장점
 * 전체 데이터 세트에 대한 전처리: 정규화의 경우 전체 데이터에 대해서 수행해야 효과적임
 * 단계확장: Apache Beam을 이용하여 GCP Dataflow등과 결합 가능
@@ -188,7 +188,7 @@ transform = Transform(examples = example_gen.outputs[‘examples’],  schema = 
 context.run(transform)
 ~~~
 
-# 모델 훈련
+# Ch6 모델 훈련
 ## 별도의 훈련 파이썬 스크립트 ->  run_fn() 정의
 
 1. TFT output
@@ -259,7 +259,7 @@ with mirrored_strategy.scope():
 ~~~
 ## TFX Tuner, Katib, kears tuner
 
-# 모델 평가
+# Ch7 모델 평가
 ## TFMA
 #### 독립형 패키지로 단일 모델 분석
 ~~~
