@@ -89,8 +89,8 @@ from tfx.utils.dsl_utils import external_input
 output = example_genpb2.Ouput(
 	split_config = example_gen_pb2.SplitConfig(splits = [
 		example_gen_pb2.SplitConfig.Split(name = ‘train’, hash_bucket = 6),
-		example_gen_pb2.SplitConfig.Split(name = ‘train’, hash_bucket = 6),
-		example_gen_pb2.SplitConfig.Split(name = ‘train’, hash_bucket = 6)
+		example_gen_pb2.SplitConfig.Split(name = ‘eval’, hash_bucket = 2),
+		example_gen_pb2.SplitConfig.Split(name = ‘test’, hash_bucket = 2)
 ]))
 
 examples = external_input(<data_path>)
