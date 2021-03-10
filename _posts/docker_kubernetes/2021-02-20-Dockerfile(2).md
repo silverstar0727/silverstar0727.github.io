@@ -2,7 +2,7 @@
 layout: post
 title: "Dockerfile(2)"
 date: 2021-02-20
-excerpt: "Dockerfile을 다루는 것을 배운다."
+excerpt: "Dockerfile을 다루는 것을 다룹니다."
 tags: [Docker]
 category: Docker & Kubernetes
 comments: False
@@ -131,3 +131,7 @@ apachectl -DFOREGROUND
 ~~~
 docker build -t entrypoint_image:0.0 ./
 ~~~
+
+
+## Referenece
+* [시작하세요 도커 쿠버네티스](http://www.yes24.com/Product/Goods/93765519)

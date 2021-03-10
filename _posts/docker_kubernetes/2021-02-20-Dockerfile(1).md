@@ -2,7 +2,7 @@
 layout: post
 title: "Dockerfile(1)"
 date: 2021-02-20
-excerpt: "Dockerfile을 작성하는 것을 배운다."
+excerpt: "Dockerfile을 작성하는 것을 다룹니다."
 tags: [Docker]
 category: Docker & Kubernetes
 comments: False
@@ -65,3 +65,7 @@ sudo docker build -t mybuild:0.0 ./
 ~~~
 sudo docker run -d -P —name myserver mybuild:0.0
 ~~~
+
+
+## Referenece
+* [시작하세요 도커 쿠버네티스](http://www.yes24.com/Product/Goods/93765519)

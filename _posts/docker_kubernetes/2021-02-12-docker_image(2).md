@@ -2,7 +2,7 @@
 layout: post
 title: "Docker image(2)"
 date: 2021-02-12
-excerpt: "도커 이미지를 docker hub에 push하는 것을 배운다."
+excerpt: "도커 이미지를 docker hub에 push하는 것을 다룹니다."
 tags: [Docker]
 category: Docker & Kubernetes
 comments: False
@@ -59,3 +59,6 @@ sudo docker push silverstar456/my-image:0.0
 ~~~
 sudo docker pull silverstar456/my-image:0.0
 ~~~
+
+## Referenece
+* [시작하세요 도커 쿠버네티스](http://www.yes24.com/Product/Goods/93765519)
