@@ -23,7 +23,7 @@ use_math: true
 
 위 두 과정을 거치고 나면, 새 파이프 라인을 만들기 위해 아래와 같은 버튼을 클릭하여 새로운 파이프라인을 만들어 줍시다.
 
-![image](/assets/post/AzureDesigner-jeongmin/fig3.png){: width="100" height="100"}
+![image](/assets/post/AzureDesigner-jeongmin/fig3.png)
 <center>Fig.3</center>
 
 그리고 나서는, 아래 그림에서 1이라고 표시된 기본 컴퓨팅 대상을 선택한 뒤, 2라고 표시된 곳에서 앞으로 작업을 하게될 예정입니다.
@@ -57,7 +57,7 @@ use_math: true
 
 모듈 이름은 “Automobile price data (Raw)”이고, 이것을 드래그 하여 중앙 캔버스에 드랍하면 됩니다. 해당 데이터 셋의 기본 통계치가 궁금하다면, 그 모듈을 눌러 시각화된 데이터셋을 확인할 수 있습니다.
 
-![image](/assets/post/AzureDesigner-jeongmin/fig7.png){: width="200" height="600"}
+![image](/assets/post/AzureDesigner-jeongmin/fig7.png)
 <center>Fig.7</center>
 
 #### 데이터 preprocessing module 선택
@@ -83,14 +83,14 @@ use_math: true
 #### Model Validation
 Train 모듈까지 선택했으면 이제 완성된 모델을 평가하는 모듈을 놓아야 합니다. 이번 포스트에서는  “Score Model”과 “Evalutate Model”을 사용하였습니다. 
 
-![image](/assets/post/AzureDesigner-jeongmin/fig10.png){: width="400" height="600"}
+![image](/assets/post/AzureDesigner-jeongmin/fig10.png)
 <center>Fig.10</center>
 
 완성된 파이프라인은 아래 그림과 같고, 제출을 누르면 파이프라인이 실행됩니다.
 
 이번 프로젝트의 파이프라인은 약 5분정도 소요되며, 모든 것이 완료되면 아래 그림과 같이 나오게 됩니다.
 
-![image](/assets/post/AzureDesigner-jeongmin/fig11.png){: width="400" height="600"}
+![image](/assets/post/AzureDesigner-jeongmin/fig11.png)
 <center>Fig.11</center>
 
 
